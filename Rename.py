@@ -157,7 +157,7 @@ z = zipfile.ZipFile(a, "w")
 clean2()
 
 for i in os.listdir(os.getcwd()):
-    if ('H'+flightnum) == i:
+    if (flightnum+"_H") in i:
         try:
             print("Identified H File, renaming..."+i)
             data = "H"+flightnum
@@ -166,10 +166,11 @@ for i in os.listdir(os.getcwd()):
             NCEI_Archive2(data)
             print(data)
         except:
+            print("Encountered an Error While Zipping H file")
             pass
 
 for i in os.listdir(os.getcwd()):
-    if ('T'+flightnum) == i:
+    if (flightnum+"_T") in i:
         try:
             print("Identified T File, renaming..."+i)
             data="T"+flightnum
@@ -179,6 +180,7 @@ for i in os.listdir(os.getcwd()):
             NCEI_Archive2(data)
             print(data)
         except:
+            print("Encountered an Error While Zipping T file")
             pass
 
 
